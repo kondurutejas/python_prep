@@ -1,5 +1,4 @@
 #!/bin/python3
-
 import math
 import os
 import random
@@ -15,6 +14,13 @@ import sys
 
 def diagonalDifference(arr):
     # Write your code here
+    primary_diagonal = 0
+    secondary_diagonal = 0
+    n = len(arr)
+    for i in range(n):
+        primary_diagonal += arr[i][i]
+        secondary_diagonal += arr[i][n - 1 - i]
+    return abs(primary_diagonal - secondary_diagonal)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
